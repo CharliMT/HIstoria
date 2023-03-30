@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>La Cueva del Tesoro</title>
+</head>
+<body>
+	<button id="startButton">Comenzar</button>
+	<script>
+		function comenzarHistoria() {
+			alert("Te encuentras frente a la entrada de una cueva misteriosa. ¿Quieres entrar?");
+
+			var respuesta = prompt("Si o no?");
+
+			if (respuesta.toLowerCase() === "si") {
+				// El usuario decide entrar en la cueva
+				alert("Al entrar en la cueva, encuentras una puerta cerrada. Para abrirla, debes responder a este acertijo:");
+
+				var acertijo = "Quien es el carry de MadLions";
+				var respuestaAcertijo = prompt(acertijo);
+
+				if (respuestaAcertijo.toLowerCase() === "elyoya") {
+					// El usuario resuelve el acertijo y avanza en la historia
+					alert("La puerta se abre y puedes continuar tu camino.");
+
+					alert("Mientras avanzas por la cueva, encuentras tres caminos diferentes. ¿Cuál eliges?");
+
+					var opciones = ["Camino izquierdo", "Camino del medio", "Camino derecho"];
+					var respuestaOpciones = prompt("Elige uno: " + opciones.join(", "));
+
+					switch (respuestaOpciones.toLowerCase()) {
+						case "camino izquierdo":
+							// El usuario elige el camino izquierdo
+							alert("Encuentras a Elyoya dando un paseo");
+							break;
+						case "camino del medio":
+							// El usuario elige el camino del medio
+							alert("Encuentras a un jugador de T1. ¿Quieres hablar con él?");
+
+							var respuestaNadar = prompt("Si o no?");
+
+							if (respuestaNadar.toLowerCase() === "si") {
+								alert("El jugador de T1 te responde: 완친촌친 ");
+							} else {
+								alert("Decides no arriesgarte y continúas tu camino.");
+							}
+							break;
+						case "camino derecho":
+							// El usuario elige el camino derecho
+							alert("Encuentras una trampa mortal. ¿Cómo la evitas?");
+
+							var respuestaTrampa = prompt("Escribe la respuesta:");
+
+							if (respuestaTrampa.toLowerCase() === "saltando") {
+								alert("Saltas la trampa y llegas a una sala llena de armas y armaduras.");
+							} else {
+								alert("Caes en la trampa y mueres.");
+							}
+							break;
+						default:
+							alert("No has elegido ninguna de las opciones. La historia termina aquí.");
+							break;
+					}
+
+				} else {
+					// El usuario no resuelve el acertijo y la historia termina
+					alert("La respuesta es incorrecta. La puerta no se abre y te quedas atrapado en la cueva para siempre.");
+				}
+			} else {
+				// El usuario decide no entrar en la cueva
+				alert("Decides no entrar en la cueva y regresar a casa. Fin de la historia.");
+			}
+		}
+
+		document.getElementById("startButton").addEventListener("click", comenzarHistoria);
+	</script>
+</body>
+</html>
